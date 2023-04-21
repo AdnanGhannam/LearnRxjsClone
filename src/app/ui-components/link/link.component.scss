@@ -1,0 +1,21 @@
+:host(.link) {
+    all: unset;
+    display: block;
+    padding: .5em;
+    border-radius: 5px;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color .2s linear;
+
+    &:hover {
+        background-color: var(--bg-link-hover);
+    }
+
+    &.active {
+        background-color: var(--bg-link-active);
+        color: var(--clr-link-active);
+        font-family: rob-med;
+    }
+}

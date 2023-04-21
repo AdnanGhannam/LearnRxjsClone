@@ -1,0 +1,64 @@
+@use '../../utilities/mixin.scss';
+
+:host(.menu) {
+    position: relative;
+    background-color: var(--bg-primary);
+
+}
+
+.menu {
+    &__content {
+        @include mixin.flex(stretch, stretch, column);
+        position: absolute;
+        z-index: 10000;
+        display: none;
+        gap: .5em;
+        margin: 1.5em 0;
+        border: 1px solid var(--clr-menu-border);
+        border-radius: 5px;
+        padding: .5em;
+        min-width: 250px;
+        box-shadow: var(--bs-menu);
+        background-color: var(--bg-primary);
+
+        &.open {
+            display: flex;
+        }
+
+        &.TopLeft {
+            @include mixin.setPosition(auto, 0px, 100%, auto);
+        }
+        &.TopCenter {
+            @include mixin.setPosition(auto, auto, 100%, 50%);
+            transform: translate(-50%, 0px);
+        }
+        &.TopRight {
+            @include mixin.setPosition(auto, auto, 100%, 0px);
+        }
+        &.BottomLeft {
+            @include mixin.setPosition(100%, 0px, auto, auto);
+        }
+        &.BottomCenter {
+            @include mixin.setPosition(100%, auto, auto, 50%);
+            transform: translate(-50%, 0px);
+        }
+        &.BottomRight {
+            @include mixin.setPosition(100%, auto, auto, 0px);
+        }
+        &.CenterLeft {
+            @include mixin.setPosition(50%, 100%, auto, auto);
+            transform: translate(0px, -50%);
+            margin: 0 1.5em;
+        }
+        &.CenterCenter {
+            @include mixin.setPosition(50%, auto, auto, 50%);
+            transform: translate(-50%, -50%);
+            margin: 0;
+        }
+        &.CenterRight {
+            @include mixin.setPosition(50%, auto, auto, 100%);
+            transform: translate(0px, -50%);
+            margin: 0 1.5em;
+        }
+    }
+}

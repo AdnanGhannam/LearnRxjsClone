@@ -1,0 +1,50 @@
+@use '../../utilities/mixin.scss';
+
+:host(.tree-view) {
+    font-family: rob-light;
+}
+
+.tree-view {
+    &__title {
+        font-size: .85em;
+        text-transform: uppercase;
+    }
+
+    &__node {
+        position: relative;
+
+        &:not(.root-child) {
+            border-left: 1px solid var(--clr-tree-view-node-border);
+            padding-left: .5em;
+            color: var(--clr-tree-view-sub-node);
+
+            + .tree-view__sub-node {
+                border-left: 1px solid var(--clr-tree-view-node-border);
+            }
+        }
+
+        &__icon {
+            --ty: -50%;
+            @include mixin.absolute(50%, .5em, auto, auto, 0, var(--ty));
+            z-index: 1000;
+            cursor: pointer;
+            user-select: none;
+            color: var(--clr-primary);
+
+            &.opened {
+                transform: rotateZ(90DEG) translateX(var(--ty));
+            }
+        }
+    }
+
+    &__sub-node {
+        list-style-type: none;
+        padding: .5em 0 .5em .75em;
+        margin: 0;
+
+
+        &.closed {
+            display: none;
+        }
+    }
+}

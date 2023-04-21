@@ -1,0 +1,19 @@
+@use '../../utilities/mixin.scss';
+
+:host(.icon-button) {
+    all: unset;
+    position: relative;
+    @include mixin.size(1.5em);
+    padding: .5em;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color .2s linear;
+    
+    &:hover {
+        background-color: var(--bg-button-hover);
+    }
+
+    .icon-button__icon {
+        @include mixin.absoluteCenter;
+    }
+}

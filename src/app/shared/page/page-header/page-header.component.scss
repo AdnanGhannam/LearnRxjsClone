@@ -1,0 +1,6 @@
+@use "../../../utilities/mixin.scss";
+
+:host(.page-header) {
+    @include mixin.flex(space-between);
+    gap: 1em;
+}

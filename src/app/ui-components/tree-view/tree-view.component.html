@@ -1,0 +1,32 @@
+<!-- <strong class="tree-view__title">{{title}}</strong> -->
+<ng-container
+    *ngFor="let node of nodes"
+    [ngTemplateOutlet]="tree"
+    [ngTemplateOutletContext]="{ $implicit: node, rootChild: true }"
+></ng-container>
+<ng-template #tree let-node let-rootChild="rootChild" >
+    <li class="tree-view__node" [class.root-child]="rootChild">
+        <a lrxjs-link 
+            class="tree-view__node__link" 
+            [class.active]="node.text == activeNode"
+            (click)="_onNodeClick(node.contentId, node.text)">
+            {{ node.text }}
+        </a>
+        <span *ngIf="node.children"
+            class="material-icons-outlined tree-view__node__icon"
+            [class.opened]="node.isOpened"
+            (click)="onToggle(node)">
+            chevron_right
+        </span>
+    </li>
+    <ng-container *ngIf="node.children">
+        <ul class="tree-view__sub-node"
+            [class.closed]="!node.isOpened">
+            <ng-container
+                *ngFor="let child of node.children"
+                [ngTemplateOutlet]="tree"
+                [ngTemplateOutletContext]="{ $implicit: child, rootChild: false }"
+            ></ng-container>
+        </ul>
+    </ng-container>
+</ng-template>

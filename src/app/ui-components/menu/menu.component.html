@@ -1,0 +1,8 @@
+<button 
+    lrxjs-icon-button icon="more_vert"
+    (click)="onToggle()"
+></button>
+
+<div [class]="'menu__content ' + direction" [class.open]="isOpened" #content>
+    <ng-content></ng-content>
+</div>

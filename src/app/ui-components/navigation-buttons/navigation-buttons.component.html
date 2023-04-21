@@ -1,0 +1,22 @@
+<button *ngIf="previous" 
+    class="navigation-buttons__prev navigation-buttons__button"
+    (click)="navTo(previous.contentId)">
+    <div class="navigation-buttons__button__content">
+        <small>Previous</small>
+        <h4 class="button-name">{{ previous.text }}</h4>
+    </div>
+    <span class="material-icons-outlined">
+        arrow_back
+    </span>
+</button>
+<button *ngIf="next" 
+    class="navigation-buttons__next navigation-buttons__button"
+    (click)="navTo(next.contentId)">
+    <div class="navigation-buttons__button__content">
+        <small>Next</small>
+        <h4 class="button-name">{{ next.text }}</h4>
+    </div>
+    <span class="material-icons-outlined">
+        arrow_forward
+    </span>
+</button>

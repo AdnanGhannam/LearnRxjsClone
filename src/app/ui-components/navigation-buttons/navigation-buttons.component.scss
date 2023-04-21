@@ -1,0 +1,42 @@
+@use "../../utilities/mixin.scss";
+
+:host(.navigation-buttons) {
+    @include mixin.flex;
+    gap: 1em;
+}
+
+.navigation-buttons {
+    &__button {
+        all: unset;
+        $spacing: .25em;
+        flex: 1;
+        @include mixin.flex(space-between);
+        text-decoration: none;
+        color: inherit;
+        border: 1px solid var(--clr-nav-buttons-border);
+        border-radius: 5px;
+        padding: 1em;
+        margin-top: $spacing;
+        transition: all .2s linear;
+        cursor: pointer;
+
+        &.navigation-buttons__prev {
+            flex-direction: row-reverse;
+            text-align: right;
+        }
+        
+        &:hover {
+            color: var(--clr-nav-buttons-hover);
+            transform: translateY(calc(-1 * $spacing));
+            box-shadow: var(--bs-nav-buttons);
+        }
+
+        small {
+            color: var(--clr-small);
+        }
+
+        .button-name {
+            margin: .2em 0;
+        }
+    }
+}

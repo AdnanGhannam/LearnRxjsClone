@@ -1,0 +1,118 @@
+@import '~prismjs/themes/prism.css';
+
+@font-face {
+    font-family: "rob-light";
+    src: url("./assets/fonts/Roboto-Light.ttf");
+}
+@font-face {
+    font-family: "rob-reg";
+    src: url("./assets/fonts/Roboto-Regular.ttf");
+}
+@font-face {
+    font-family: "rob-med";
+    src: url("./assets/fonts/Roboto-Medium.ttf");
+}
+@font-face {
+    font-family: "rob-bold";
+    src: url("./assets/fonts/Roboto-Bold.ttf");
+}
+
+:root {
+    --white: #fff;
+    --black: #3b454e;
+    --gray: #0000000d;
+    --light-gray: #8899a8;
+    --lighter-gray: #d3dce4;
+    --med-gray: #e3e8ed;
+    --blue: #3884ff;
+    --gray-blue: #85a8e01a;
+
+    // 
+    --clr-primary: var(--black);
+    --bg-primary: var(--white);
+    
+    // customs
+    --clr-input: var(--gray);
+    --clr-input-border: var(--lighter-gray);
+    --clr-icon: var(--light-gray);
+    --clr-link-active: var(--blue);
+    --clr-menu-border: var(--lighter-gray);
+    --clr-small: var(--light-gray);
+    --clr-nav-buttons-border: var(--gray);
+    --clr-nav-buttons-hover: var(--blue);
+    --clr-tree-view-node-border: var(--lighter-gray);
+    --clr-tree-view-sub-node: var(--light-gray);
+    --clr-sidebar-border: var(--med-gray);
+
+    --bg-link-hover: var(--gray);
+    --bg-link-active: var(--gray-blue);
+    --bg-button-hover: var(--gray-blue);
+    --bg-markdown-code: var(--gray);
+
+    --bs-menu: var(--gray) 0px 4px 10px;
+    --bs-nav-buttons: var(--gray) 0px 4px 10px;
+
+    --sidebar-width: 300px;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: rob-reg;
+    color: var(--clr-primary);
+}
+
+h1, h2, h3, h4, h5, h6, strong {
+    font-family: rob-med;
+}
+
+.icon {
+    color: var(--clr-icon);
+    user-select: none;
+    font-size: 1.1rem;
+}
+
+
+///
+h1 a:hover {
+  opacity: 0.87;
+}
+
+blockquote {
+  border-left: 3px solid rgba(0,0,0,0.21);
+  padding-left: 12px;
+  color: rgba(0,0,0,0.54);
+}
+
+.variable-binding,
+.variable-textarea {
+  width: 49%;
+}
+
+.variable-textarea {
+  border-radius: 5px;
+  box-shadow: 0 1px 2px rgba(0,0,0,.07);
+  min-height: 420px;
+  padding: 8px;
+  transition: all 300ms ease-out;
+}
+
+.variable-textarea:hover {
+  box-shadow: 0 6px 12px 3px rgba(0,0,0,.09),
+    0 2px 3px 1px rgba(0,0,0,.06);
+}
+
+.variable-binding {
+  display: block;
+  float: right;
+}
+
+.blue-text {
+  color: blue;
+}

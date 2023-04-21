@@ -1,0 +1,11 @@
+<label class="material-icons-outlined input__icon icon"
+    [for]="id">
+    search
+</label>
+<input class="input__element"
+    [id]="id"
+    [name]="name"
+    [placeholder]="placeholder"
+    [disabled]="disabled"
+    [value]="_value" 
+    (change)="_onChange($event)" />

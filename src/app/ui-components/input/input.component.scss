@@ -1,0 +1,23 @@
+@use "../../utilities/mixin.scss";
+
+:host(.input) {
+    @include mixin.flex;
+    gap: .5em;
+    padding: .5em;
+    background-color: var(--clr-input);
+    border-radius: 5px;
+    border: 1px solid transparent;
+    transition: border-color .2s linear;
+
+    &:hover,
+    &:focus-within {
+        border-color: var(--clr-input-border);
+    }
+}
+
+.input {
+    &__element {
+        all: unset;
+        flex: 1;
+    }
+}

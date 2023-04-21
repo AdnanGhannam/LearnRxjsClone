@@ -1,0 +1,16 @@
+@use "./utilities/mixin.scss";
+
+:host(.app) {
+    @include mixin.grid(1fr, 300px 1fr, 0, 1em);
+    height: 100dvh;
+    overflow: hidden;
+}
+
+.app {
+    &__main {
+        @include mixin.flex(stretch, stretch, column);
+        gap: 2em;
+        padding: 1em 4em;
+        overflow-y: auto;
+    }
+}

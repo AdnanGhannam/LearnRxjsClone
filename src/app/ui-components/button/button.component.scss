@@ -1,0 +1,12 @@
+:host(.button) {
+    all: unset;
+    display: inline-block;
+    padding: .75em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color .2s linear;
+
+    &:hover {
+        background-color: var(--bg-button-hover);
+    }
+}
